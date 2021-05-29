@@ -1,0 +1,48 @@
+mixin mob-mnu()
+	-
+		//- let path = require('path');
+		//- let fs = require('fs');
+		//- var requestURL = 'top-nav.json';
+		//- var request = new XMLHttpRequest();
+		//- request.open('GET', requestURL);
+		//- request.responseType = 'json';
+		//- let dataJson = JSON.parse(json);
+	//- h1= dataJson['lala'] 
+	+b.menu-mobile--js.d-lg-none
+		+b.toggle-menu-mobile--js
+			span
+		+e.inner
+		
+			+mnu()
+			.text-right
+	//  мобильное меню
+mixin top-nav() 
+	// start top-nav
+	+b.top-nav.block-with-lazy
+		.container
+			.row
+				.col-lg-auto.col 
+					+e.logo(href="/")
+						+pic("logo",'','')
+				.col-lg.order-lg-0.order-last
+					.d-none.d-lg-block
+						+mnu()
+					+b.search-block
+						form
+							input(type="text" placeholder="Поиск по сайту...").form-control
+							button 
+								+icon("search")
+				.col-auto
+					+e.links.d-flex 
+						+e.tel(href="tel:8-928-77-36-777") 8-928-77-36-777
+						.d-flex
+							a(href="#").ms-2: img(src="img/svg/whatsapp.svg", alt="")
+							a(href="#").ms-2: img(src="img/svg/telegram.svg", alt="")
+							a(href="#").ms-2: img(src="img/svg/viber.svg", alt="")
+						+b.toggle-menu-mobile--js.d-lg-none.ms-2
+							span
+					+b.btn-basket.btn-accent(href="#")
+						img(src="img/svg/shopping-bag.svg", alt="")
+						| Ваш заказ
+						+e.DIV.count 99
+	// end top-nav

@@ -1,0 +1,53 @@
+mixin card(i,t,p,pr)
+	+b.prod-item
+		+e.img-wrap(href="#").bg-wrap
+			+pic(`prod-${i}.jpg`,'bg',0).picture-bg
+		+e.caption
+			+e.title(href="#")= t
+			+e.small Вес: 485 г.
+			p!= p
+			+e.footer.row
+				.col
+					+e.price
+						= pr  
+						| 
+						span  ₽
+				.col-auto
+					+e.btn(href="#")
+						img(src="img/svg/shopping-bag.svg", alt="")
+mixin sCatalog(h2, ar)
+	// start sCatalog
+	+b.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			.section-title
+				.row
+					.col
+						h2= h2 
+					if ar
+						.col-auto
+							.arrow-wrap
+								+arrow
+			if ar
+				+e.slider--js.swiper-container
+					.swiper-wrapper
+						- for (var x = 0; x < 2; x++)
+							+e.slide.swiper-slide
+								+card('1',`Burger мистер Трюфель`,`Свежая булочка, мраморная говядина medium well, сыр, листья салата, ломтики помидоров, маринованные...`,'150')
+							+e.slide.swiper-slide
+								+card('2',`Комбо Хот-Дог`,`Домашние наггетсы <br> Хот-Дог <br> Кола 0,33`,'450')
+							+e.slide.swiper-slide
+								+card('3',`Нагетсы`,`Филе кур девственниц`,'1 150')
+							+e.slide.swiper-slide
+								+card('4',`Фирменный Las Burger`,`Свежая булочка, мраморная говядина medium well, сыр, листья салата, ломтики помидоров, маринованные...`, '2 150')
+			else
+				.row
+					- for (var x = 0; x < 3; x++)
+						+e.col.col-xl-3.col-lg-4.col-sm-6
+							+card('1',`Burger мистер Трюфель`,`Свежая булочка, мраморная говядина medium well, сыр, листья салата, ломтики помидоров, маринованные...`,'150')
+						+e.col.col-xl-3.col-lg-4.col-sm-6
+							+card('2',`Комбо Хот-Дог`,`Домашние наггетсы <br> Хот-Дог <br> Кола 0,33`,'450')
+						+e.col.col-xl-3.col-lg-4.col-sm-6
+							+card('3',`Нагетсы`,`Филе кур девственниц`,'1 150')
+						+e.col.col-xl-3.col-lg-4.col-sm-6
+							+card('4',`Фирменный Las Burger`,`Свежая булочка, мраморная говядина medium well, сыр, листья салата, ломтики помидоров, маринованные...`, '2 150')
+	// end sCatalog

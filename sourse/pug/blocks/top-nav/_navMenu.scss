@@ -1,0 +1,25 @@
+.menu{
+	@include media-breakpoint-up(lg) {
+
+		
+		display: flex;
+		@include roww(20px);
+		text-align: center;
+	}
+	list-style: none;
+	position: relative;
+	margin-bottom: 0;
+	max-width: 100%;
+	flex-wrap: wrap;
+	margin-bottom: rem(28);
+	li{
+		// margin-left: 0;
+		// margin-right: 0;
+		padding: 0;
+	}
+	a{
+		display: block;
+		padding: rem(0) rem(10);
+		color: $body-color;
+	}
+}

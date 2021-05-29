@@ -1,0 +1,22 @@
+mixin footer()
+	+b.FOOTER.footer
+		.container
+			.row
+				.col-sm-auto.col
+					+e.logo(href="/")
+						+pic("logo",'','')
+				.col-sm.col-auto
+					+mnu
+					p 
+						a(href="#") Политика конфиденциальности
+					p  Copyright © 2021 
+				.col-md-auto 
+					+e.links.d-flex
+						+e.tel.text-body(href="tel:8-928-77-36-777") 8-928-77-36-777
+						.d-flex
+							a(href="#").ms-2: img(src="img/svg/whatsapp.svg", alt="")
+							a(href="#").ms-2: img(src="img/svg/telegram.svg", alt="")
+							a(href="#").ms-2: img(src="img/svg/viber.svg", alt="")
+					.text-md-end
+						.small #[strong Адрес:] г. Ростов-на-Дону, ул.&nbsp;40&nbsp;лет победы&nbsp;д.&nbsp;89
+					+soc
