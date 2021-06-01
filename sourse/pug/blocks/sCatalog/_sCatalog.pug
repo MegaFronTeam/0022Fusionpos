@@ -1,3 +1,8 @@
+mixin radio(i,t,id)
+	.radio
+		input.radio-btn(type="radio" name=`menu` id=`menu${id}${i}` value= t)&attributes(attributes)
+		label(for=`menu${id}${i}`)= t
+
 mixin card(i,t,p,pr)
 	+b.prod-item
 		+e.img-wrap(href="#").bg-wrap
@@ -14,10 +19,10 @@ mixin card(i,t,p,pr)
 						span  ₽
 				.col-auto
 					+e.btn(href="#")
-						img(src="img/svg/shopping-bag.svg", alt="")
+						img(src="img/svg/shopping-bag.svg" alt="")
 mixin sCatalog(h2, ar)
 	// start sCatalog
-	+b.sCatalog.section#sCatalog&attributes(attributes)
+	+b.sCatalog.section&attributes(attributes)
 		.container
 			.section-title
 				.row
@@ -40,6 +45,34 @@ mixin sCatalog(h2, ar)
 							+e.slide.swiper-slide
 								+card('4',`Фирменный Las Burger`,`Свежая булочка, мраморная говядина medium well, сыр, листья салата, ломтики помидоров, маринованные...`, '2 150')
 			else
+				.stickyItem.stickyItem--js
+					+b.tabs--js
+						+e.caption.d-flex
+							+e.btn.active Все
+							+e.btn Бургеры
+							+e.btn Закуски
+							+e.btn Пицца
+							+e.btn Хот-доги
+							+e.btn Бар
+							+e.btn Десерты
+						+e.wrap
+							mixin content(i)
+								+e.content&attributes(attributes)
+									+radio(i,'Все',1)(checked)
+									+radio(i,'Кофе',2)
+									+radio(i,'Травяные чаи',3)
+									+radio(i,'Китайские чаи',4)
+									+radio(i,'Пиво',5)
+									+radio(i,'Вода',6)
+									+radio(i,'Лимонады',7)
+									+radio(i,'Десерты',8)
+							+content(1)(class="active")
+							+content(2)
+							+content(3)
+							+content(4)
+							+content(5)
+							+content(6)
+							+content(7)
 				.row
 					- for (var x = 0; x < 3; x++)
 						+e.col.col-xl-3.col-lg-4.col-sm-6

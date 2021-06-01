@@ -1,83 +1,86 @@
 // start .sCatalog
 .sCatalog {
-		// --sPT: ;
-		// --sPB: ;
-		// --sTPB: ;
-	&__slider{
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+	&__slider {
 		// margin-right: -30px;
 		@include media-breakpoint-up(xxl) {
 			overflow: hidden;
 		}
 		overflow: visible;
 	}
-	&__slide{
-
+	&__slide {
 		// width: calc(100% / 4 - 30px);
 		@include media-breakpoint-up(sm) {
-
 			width: rem(282);
 		}
 		width: 100%;
 		height: auto;
-		
 	}
-	&__col{
+	&__col {
 		margin-bottom: rem(26);
 	}
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
 } // end.sCatalog
 
-.prod-item{
-	border-radius: 40px  ;
+.prod-item {
+	border-radius: 40px;
 	background-color: #fff;
 	min-height: 100%;
-	&__img-wrap{
+	&__img-wrap {
 		@include block(282, 182);
 		overflow: hidden;
-		border-radius: 40px  40px 0 0;
+		border-radius: 40px 40px 0 0;
 	}
 	display: flex;
 	flex-direction: column;
-	&__caption{
+	&__caption {
 		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
 		padding: rem(16) rem(23) rem(23);
 	}
-	&__footer{
+	&__footer {
 		margin-top: auto;
 		align-items: center;
 	}
-	&__title{
+	&__title {
 		@extend .text-body;
 		display: block;
 		margin-bottom: rem(7);
 	}
-	&__small{
+	&__small {
 		font-size: 13px;
-		color: #7D7D7D;
+		color: #7d7d7d;
 	}
-	p{
+	p {
 		font-size: $small;
 	}
-	&__small{
+	&__small {
 		margin-bottom: rem(8);
 	}
-	&__price{
+	&__price {
 		font-weight: bold;
-		span{
-			color: #7D7D7D;
+		span {
+			color: #7d7d7d;
 			font-weight: normal;
 		}
 	}
-	&__btn
-	{
+	&__btn {
 		@extend .btn-accent;
 		padding: 0;
 		border-radius: 50%;
@@ -86,18 +89,118 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		img{
+		img {
 			max-width: 70%;
 		}
 	}
 }
 
-.arrow-wrap{
+.arrow-wrap {
 	position: relative;
 	width: rem(49 + 49 + 25);
 	display: flex;
 	justify-content: space-between;
-	.swiper-button-hand{
+	.swiper-button-hand {
 		position: relative !important;
+	}
+}
+
+.stickyItem {
+	z-index: 90;
+	&.sticky {
+		.tabs {
+			padding-top: rem(24px);
+			padding-bottom: rem(24px);
+			&::before {
+				height: 100%;
+				background-color: #fff;
+			}
+
+			&__btn {
+				background: #f3f3f3;
+				&.active {
+					background: linear-gradient(319.57deg, #fdd400 3.27%, #e14e15 78.03%);
+				}
+			}
+		}
+	}
+}
+
+.tabs {
+	font-size: 14px;
+	padding-bottom: rem(30);
+	@include mt;
+	position: relative;
+	&::before {
+		content: "";
+		width: 200vw;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		left: -50vw;
+		height: 1px;
+		position: absolute;
+	}
+	.tabs__btn-accordion {
+		display: none;
+	}
+	&__caption {
+		@include roww(#{rem(16px)}, m);
+		flex-wrap: wrap;
+		padding-bottom: rem(24);
+	}
+	&__btn {
+		background: #fff;
+		border-radius: 20px;
+		padding: rem(11);
+		font-weight: 600;
+		&.active {
+			background: linear-gradient(319.57deg, #fdd400 3.27%, #e14e15 78.03%);
+			color: #fff;
+			&::before {
+				opacity: 1;
+			}
+		}
+		position: relative;
+
+		&::before {
+			content: "";
+			top: 110%;
+			@include a-cent(x);
+			width: 6px;
+			height: 6px;
+			border-right: solid 1px #000;
+			border-bottom: solid 1px #000;
+			transform: rotate(45deg);
+			opacity: 0;
+			@include mt;
+		}
+	}
+	&__content {
+		@include roww(#{rem(16px)}, m);
+		flex-wrap: wrap;
+		display: none;
+		&.active {
+			display: flex;
+		}
+	}
+}
+
+.radio {
+	input {
+		@extend .invisible;
+	}
+
+	label {
+		font-size: 14px;
+		background: #fffbea;
+		border-radius: 20px;
+		padding: rem(11);
+		font-weight: 600;
+	}
+
+	input:checked + label {
+		background: linear-gradient(319.57deg, #fdd400 3.27%, #e14e15 78.03%);
+		color: #fff;
 	}
 }

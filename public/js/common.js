@@ -1,3 +1,11 @@
+"use strict";
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 let div = document.createElement('div');
 div.style.overflowY = 'scroll';
 div.style.width = '50px';
@@ -130,21 +138,21 @@ const JSCCommon = {
 			const tabsContent = tabsWrap.querySelectorAll(".tabs__content");
 			const random = Math.trunc(Math.random() * 1000);
 			tabsBtn.forEach((el, index) => {
-				const data = `tab-content-${random}-${index}`;
+				const data = "tab-content-".concat(random, "-").concat(index);
 				el.dataset.tabBtn = data;
 				const content = tabsContent[index];
 				content.dataset.tabContent = data;
 				if (!content.dataset.tabContent == data) return;
 				const active = content.classList.contains('active') ? 'active' : ''; // console.log(el.innerHTML);
 
-				content.insertAdjacentHTML("beforebegin", `<div class="tabs__btn-accordion  btn btn-primary  mb-1 ${active}" data-tab-btn="${data}">${el.innerHTML}</div>`);
+				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn-accordion  btn btn-primary  mb-1 ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
 			});
 			tabs.addEventListener('click', function (element) {
-				const btn = element.target.closest(`[data-tab-btn]:not(.active)`);
+				const btn = element.target.closest("[data-tab-btn]:not(.active)");
 				if (!btn) return;
 				const data = btn.dataset.tabBtn;
-				const tabsAllBtn = this.querySelectorAll(`[data-tab-btn`);
-				const content = this.querySelectorAll(`[data-tab-content]`);
+				const tabsAllBtn = this.querySelectorAll("[data-tab-btn");
+				const content = this.querySelectorAll("[data-tab-content]");
 				tabsAllBtn.forEach(element => {
 					element.dataset.tabBtn == data ? element.classList.add('active') : element.classList.remove('active');
 				});
@@ -226,12 +234,12 @@ const JSCCommon = {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01; // Then we set the value in the --vh custom property to the root of the document
 
-		document.documentElement.style.setProperty('--vh', `${vh}px`); // We listen to the resize event
+		document.documentElement.style.setProperty('--vh', "".concat(vh, "px")); // We listen to the resize event
 
 		window.addEventListener('resize', () => {
 			// We execute the same script as before
 			let vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
+			document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
 		}, {
 			passive: true
 		});
@@ -272,7 +280,7 @@ function eventHandler() {
 	screenName = document.body.dataset.bg;
 
 	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
 	}
 
 	function setFixedNav() {
@@ -317,24 +325,29 @@ function eventHandler() {
 		// },
 
 	};
-	const swiper4 = new Swiper('.headerBlock__slider--js', { // slidesPerView: 5,
-		...defaultSl,
+	const swiper4 = new Swiper('.headerBlock__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		pagination: {
 			el: ' .swiper-pagination',
 			type: 'bullets',
 			clickable: true
 		}
-	}); // modal window
+	})); // modal window
 
-	const swiperCatalog = new Swiper('.sCatalog__slider--js', {
-		slidesPerView: 'auto',
-		...defaultSl,
+	const swiperCatalog = new Swiper('.sCatalog__slider--js', _objectSpread(_objectSpread({
+		slidesPerView: 'auto'
+	}, defaultSl), {}, {
 		spaceBetween: 30,
 		navigation: {
 			nextEl: '.sCatalog .swiper-button-next',
 			prevEl: '.sCatalog .swiper-button-prev'
 		}
-	}); // modal window
+	})); // modal window
+
+	if ('.stickyItem--js') {
+		$('.stickyItem--js').hcSticky({
+			stickTo: '.stickyContainer--js'
+		});
+	}
 }
 
 ;

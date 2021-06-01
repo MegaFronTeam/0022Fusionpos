@@ -341,6 +341,11 @@ function eventHandler() {
 
 	});
 	// modal window
+	if ('.stickyItem--js') {
+		$('.stickyItem--js').hcSticky({
+			stickTo: '.stickyContainer--js'
+		});
+	}
 
 };
 if (document.readyState !== 'loading') {

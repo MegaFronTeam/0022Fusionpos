@@ -1,0 +1,131 @@
+// start .sReviews
+.sReviews {
+	// --sPT: ;
+	--sPB: 0;
+	--sTPB: #{rem(35)};
+	padding-top: calc(var(--sPT) / 2.7);
+
+	h2 {
+		@include rfs(30px);
+		margin-bottom: 0;
+	}
+	.section-title {
+		display: flex;
+		align-items: center;
+		&__add {
+			font-weight: bold;
+			@include rfs(20px);
+			color: #e34e18;
+			letter-spacing: 0.02em;
+			margin-left: rem(20);
+			@include media-breakpoint-up(md) {
+				margin-left: rem(73);
+			}
+
+			&:hover {
+				color: #e31818;
+			}
+		}
+	}
+
+	&__row {
+		@include media-breakpoint-up(xl) {
+			@include roww(32px);
+		}
+	}
+	&__item {
+		margin-bottom: rem(24);
+		background-color: #fff;
+		border-radius: 20px;
+		padding: rem(15) rem(15) rem(2);
+
+		@include media-breakpoint-up(sm) {
+			border-radius: 40px;
+			padding: rem(20) rem(32) rem(5);
+		}
+	}
+	&__itemHead {
+		padding-bottom: rem(14);
+
+		.row {
+			@include media-breakpoint-up(xl) {
+				@include roww(34px);
+			}
+		}
+	}
+	&__name {
+		font-weight: bold;
+	}
+	&__writeWrap {
+		background: #ffffff;
+		border-radius: 40px;
+	}
+	&__write {
+		text-align: center;
+		padding: rem(14) rem(10) rem(20);
+		border-bottom: solid 1px rgba($color: #c9c9c9, $alpha: 0.35);
+		font-weight: bold;
+		letter-spacing: 0.02em;
+		color: #1f1f1f;
+		@include rfs(24px);
+	}
+
+	.form-wrap {
+		padding: rem(15);
+		@include media-breakpoint-up(sm) {
+			padding: rem(25);
+		}
+	}
+
+	.stars {
+		@include roww(10px, m);
+		&__star {
+			.icon {
+				font-size: rem(24);
+			}
+		}
+	}
+
+	p {
+		font-size: $small;
+		letter-spacing: 0.02em;
+	}
+
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sReviews
+
+.form-wrap {
+	&__yourMark {
+		letter-spacing: 0.02em;
+		font-size: $small;
+	}
+
+	&__head {
+		padding-bottom: rem(22);
+	}
+	&__btn {
+		width: 100%;
+	}
+
+	&__input-wrap {
+		padding-bottom: rem(16);
+	}
+
+	&__input {
+		border: 1px solid #c9c9c9;
+		border-radius: 20px;
+		font-size: $small;
+		padding: rem(11) rem(19);
+	}
+
+	textarea {
+		min-height: rem(168);
+	}
+}

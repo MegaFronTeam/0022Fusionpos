@@ -1,33 +1,27 @@
- 
-	  
-.soc{
+.soc {
 	@include roww(10px, m);
 	display: flex;
-	&__item{
-		text-decoration: none !important; 
+	&__item {
+		text-decoration: none !important;
 		vertical-align: middle;
 		@include mt;
 		display: grid;
 		place-items: center;
 		@extend .text-body;
-		&:hover{
-		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
+		&:hover {
+			// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
 			// opacity: .6 ;
 		}
-		
 	}
-	.icon{
+	.icon {
 		font-size: 20px;
 	}
-	 
-
 }
- 
 
-.counter{
+.counter {
 	counter-reset: num;
 	&__item {
-		position: relative; 
+		position: relative;
 		&::before {
 			content: counter(num);
 			counter-increment: num;
@@ -35,3 +29,28 @@
 	}
 }
 
+.stars {
+	display: flex;
+	align-items: center;
+	@include roww(5px, m);
+	&__star {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.icon {
+			font-size: rem(16px);
+		}
+
+		&.filled-star {
+			.icon {
+				color: #ffce0b;
+			}
+		}
+		&.empty-star {
+			.icon {
+				color: #c4c4c4;
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+mixin sReviews(data)
+	// start sReviews
+	+b.SECTION.sReviews.section#sReviews&attributes(attributes)
+		.container
+
+
+			+e.row.row
+				.col-lg-8 
+					+b.section-title
+						h2 Отзывы
+						+e.add(href="#") + Добавить отзыв
+					mixin item
+						+e.item 
+							+e.itemHead
+								.row.align-items-center
+									.col-auto
+										+e.name Валентина
+									.col-auto
+										+stars
+							p Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а&nbsp;также реальное распределение букв и&nbsp;пробелов в&nbsp;абзацах, которое не&nbsp;получается при простой дубликации &laquo;Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст..&raquo; Многие программы электронной вёрстки и&nbsp;редакторы HTML используют Lorem Ipsum в&nbsp;качестве текста по&nbsp;умолчанию, так что поиск по&nbsp;ключевым словам
+					+item
+					+item
+					+item
+				.col 
+					+e.writeWrap 
+						+e.write Написать отзыв
+						+form-wrap 
+							+e.head
+								.row.justify-content-between
+									.col-auto 
+										+e.yourMark Ваша оценка
+									.col-auto
+										+stars
+							+input('Ваше имя','text')
+							+input('Ваш комментарий','textarea')
+							+e.btn.btn-accent(type="submit")
+								img(src="img/svg/shopping-bag.svg" alt="" loading="lazy")
+								|Отправить
+
+	// end sReviews

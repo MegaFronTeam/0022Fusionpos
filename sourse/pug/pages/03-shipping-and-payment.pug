@@ -9,10 +9,10 @@ include ../blocks/sReviews/_sReviews.pug
 
 block variables
 	- let  mainPage= null 
-	- let  bg= '02.jpg'
+	- let  bg= '03.jpg'
 
 block title
-	- let  title= 'Фирменный Las Burger'
+	- let  title= 'Оплата и доставка'
 	title= title
 block pagecontent
 
@@ -22,15 +22,9 @@ block pagecontent
 		+b.btnBack(href="#")
 			//- +icon('arrowL')
 			img(src="img/svg/arrowL.svg" alt="Назад")
-	+sProdCard({
-		title: title,
+	+sContent-inner({
+		title: title
 	})
-	+sReviews()
-	//- +headerBlock()
-	+sCatalog("С этим покупают",'arr')
-	//- +sCatalog("Меню")
-
-	//- +sContent
 	+footer()
 
 

@@ -1,0 +1,41 @@
+mixin sProdCard(data)
+	// start sProdCard
+	+b.SECTION.sProdCard.section#sProdCard&attributes(attributes)
+		.container
+			+e.row.row
+				.col
+
+					h1= data.title
+					+e.infoRow.row.align-items-center 
+						.col-sm-auto 
+							.row.align-items-center 
+								.col-auto
+									span.text-dark.fz-sm Вес: 485 г.
+								.col-auto
+									span.text-success.fz-sm В наличии
+						.col
+							+e.reviewRow.row.align-items-center
+								.col-auto
+									+stars
+								.col-auto
+									+e.review.fz-sm.text-danger(href="#") 12 отзывов
+					+e.price 450
+						span.text-dark &nbsp;₽
+					.row.align-items-center 
+						.col-auto
+							+b.quantly
+								+e.BUTTON.btn.minus(type="button")
+									+icon('minus')
+								+e.INPUT.input(type="number" value='10')
+								+e.BUTTON.btn.plus.active(type="button")
+									+icon('plus')
+						+e.btnCol.col
+							+e.btn.btn-accent(type="button")
+								img(src="img/svg/shopping-bag.svg" alt="В корзину" loading="lazy")
+								|В корзину
+
+				.col-lg-6.col-xl-7.order-lg-first.sProdCard__col
+					+e.imgWrap(href="img/@2x/prod-photo.png" data-fancybox="prod")
+						+pic('prod-photo.png','','')
+			p Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а&nbsp;также реальное распределение букв и&nbsp;пробелов в&nbsp;абзацах, которое не&nbsp;получается при простой дубликации &laquo;Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст..&raquo; Многие программы электронной вёрстки и&nbsp;редакторы HTML используют Lorem Ipsum в&nbsp;качестве текста по&nbsp;умолчанию, так что поиск по&nbsp;ключевым словам
+	// end sProdCard
