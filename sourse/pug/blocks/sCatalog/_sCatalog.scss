@@ -140,6 +140,7 @@
 		left: -50vw;
 		height: 1px;
 		position: absolute;
+		@include mt;
 	}
 	.tabs__btn-accordion {
 		display: none;
