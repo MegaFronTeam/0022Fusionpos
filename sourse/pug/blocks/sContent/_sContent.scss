@@ -126,10 +126,6 @@
 
 	&__sitebarRow {
 		min-height: 100%;
-		@include media-breakpoint-up(md) {
-			max-width: 280px;
-			margin-left: auto;
-		}
 	}
 
 	&__sitebarCol {
