@@ -128,7 +128,7 @@
 
 .tabs {
 	font-size: 14px;
-	padding-bottom: rem(30);
+	padding-bottom: rem(20);
 	@include mt;
 	position: relative;
 	&::before {
@@ -146,15 +146,22 @@
 		display: none;
 	}
 	&__caption {
-		@include roww(#{rem(16px)}, m);
+		@include roww(#{rem(10px)}, m);
+		@include media-breakpoint-up(sm) {
+			@include roww(#{rem(16px)}, m);
+		}
 		flex-wrap: wrap;
-		padding-bottom: rem(24);
+		padding-bottom: rem(10);
 	}
 	&__btn {
 		background: #fff;
 		border-radius: 20px;
-		padding: rem(11);
+		padding: rem(5) rem(8);
+		@include media-breakpoint-up(sm) {
+			padding: rem(11);
+		}
 		font-weight: 600;
+		margin-bottom: rem(14);
 		&.active {
 			background: linear-gradient(319.57deg, #fdd400 3.27%, #e14e15 78.03%);
 			color: #fff;
@@ -178,7 +185,10 @@
 		}
 	}
 	&__content {
-		@include roww(#{rem(16px)}, m);
+		@include roww(#{rem(10px)}, m);
+		@include media-breakpoint-up(sm) {
+			@include roww(#{rem(16px)}, m);
+		}
 		flex-wrap: wrap;
 		display: none;
 		&.active {
@@ -188,6 +198,7 @@
 }
 
 .radio {
+	margin-bottom: rem(10);
 	input {
 		@extend .invisible;
 	}
@@ -196,7 +207,10 @@
 		font-size: 14px;
 		background: #fffbea;
 		border-radius: 20px;
-		padding: rem(11);
+		padding: rem(5) rem(8);
+		@include media-breakpoint-up(sm) {
+			padding: rem(11);
+		}
 		font-weight: 600;
 	}
 
