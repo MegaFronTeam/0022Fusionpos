@@ -3,6 +3,7 @@
 	padding-top: var(--sT);
 	&__logo{
 		display: block;
+		display: block;
 		// padding: rem(15);
 		@include media-breakpoint-up(sm) {
 			margin-top:  calc(-1 * var(--sT));
