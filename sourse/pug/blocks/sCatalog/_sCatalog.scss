@@ -3,6 +3,8 @@
 	// --sPT: ;
 	// --sPB: ;
 	// --sTPB: ;
+	position: relative;
+	overflow: hidden;
 	&__slider {
 		// margin-right: -30px;
 		@include media-breakpoint-up(xxl) {
@@ -124,78 +126,78 @@
 			}
 		}
 	}
-}
-
-.tabs {
-	font-size: 14px;
-	padding-bottom: rem(20);
-	@include mt;
-	position: relative;
-	&::before {
-		content: "";
-		width: 200vw;
-		position: absolute;
-		top: 0;
-		z-index: -1;
-		left: -50vw;
-		height: 1px;
-		position: absolute;
+	.tabs {
+		font-size: 14px;
+		padding-bottom: rem(20);
 		@include mt;
-	}
-	.tabs__btn-accordion {
-		display: none;
-	}
-	&__caption {
-		@include roww(#{rem(10px)}, m);
-		@include media-breakpoint-up(sm) {
-			@include roww(#{rem(16px)}, m);
-		}
-		flex-wrap: wrap;
-		padding-bottom: rem(10);
-	}
-	&__btn {
-		background: #fff;
-		border-radius: 20px;
-		padding: rem(5) rem(8);
-		@include media-breakpoint-up(sm) {
-			padding: rem(11);
-		}
-		font-weight: 600;
-		margin-bottom: rem(14);
-		&.active {
-			background: linear-gradient(319.57deg, #fdd400 3.27%, #e14e15 78.03%);
-			color: #fff;
-			&::before {
-				opacity: 1;
-			}
-		}
 		position: relative;
-
 		&::before {
 			content: "";
-			top: 110%;
-			@include a-cent(x);
-			width: 6px;
-			height: 6px;
-			border-right: solid 1px #000;
-			border-bottom: solid 1px #000;
-			transform: rotate(45deg);
-			opacity: 0;
+			width: 200vw;
+			position: absolute;
+			top: 0;
+			z-index: -1;
+			left: -50vw;
+			height: 1px;
+			position: absolute;
 			@include mt;
 		}
-	}
-	&__content {
-		@include roww(#{rem(10px)}, m);
-		@include media-breakpoint-up(sm) {
-			@include roww(#{rem(16px)}, m);
+		.tabs__btn-accordion {
+			display: none;
 		}
-		flex-wrap: wrap;
-		display: none;
-		&.active {
-			display: flex;
+		&__caption {
+			@include roww(#{rem(10px)}, m);
+			@include media-breakpoint-up(sm) {
+				@include roww(#{rem(16px)}, m);
+			}
+			flex-wrap: wrap;
+			padding-bottom: rem(10);
+		}
+		&__btn {
+			background: #fff;
+			border-radius: 20px;
+			padding: rem(5) rem(8);
+			@include media-breakpoint-up(sm) {
+				padding: rem(11);
+			}
+			font-weight: 600;
+			margin-bottom: rem(14);
+			&.active {
+				background: linear-gradient(319.57deg, #fdd400 3.27%, #e14e15 78.03%);
+				color: #fff;
+				&::before {
+					opacity: 1;
+				}
+			}
+			position: relative;
+	
+			&::before {
+				content: "";
+				top: 110%;
+				@include a-cent(x);
+				width: 6px;
+				height: 6px;
+				border-right: solid 1px #000;
+				border-bottom: solid 1px #000;
+				transform: rotate(45deg);
+				opacity: 0;
+				@include mt;
+			}
+		}
+		&__content {
+			@include roww(#{rem(10px)}, m);
+			@include media-breakpoint-up(sm) {
+				@include roww(#{rem(16px)}, m);
+			}
+			flex-wrap: wrap;
+			display: none;
+			&.active {
+				display: flex;
+			}
 		}
 	}
 }
+
 
 .radio {
 	margin-bottom: rem(10);
