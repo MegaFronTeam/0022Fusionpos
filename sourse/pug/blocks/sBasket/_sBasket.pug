@@ -1,0 +1,56 @@
+mixin sBasket(data)
+	// start sBasket
+	+b.SECTION.sBasket.section#sBasket&attributes(attributes)
+		.container
+			+e.row.row
+				.col-lg-9.mb-4
+					.h4.strong.mb-3 Ваш заказ
+					- for (var x = 0; x < 3; x++)
+						+e.item
+							+e.row.row
+								+e.img-wrap.col-auto.bg-wrap
+									+pic("prod-1.jpg",'bg',0).picture-bg
+								+e.col.col
+									.h5.strong Burger мистер Трюфель
+									.small.text-secondary.mb-3 Вес: 485 г.
+									+e.row-foot.row
+										.col
+											+e.price #[strong 249] #[span ₽] х 1 = #[strong 249] #[span ₽]
+										.col-sm-auto
+											+b.quantly
+												+e.BUTTON.btn.minus(type="button")
+													+icon('minus')
+												+e.INPUT.input(type="number" value='10')
+												+e.BUTTON.btn.plus.active(type="button")
+													+icon('plus')
+							+e.close
+				.col
+					.h4.strong.mb-3 Выберите акцию
+					+e.panel
+						+in-c("radio",'Промокод','promo')(checked)
+						+input('Введите промокод')
+						button.btn.btn-accent.w-100  Применить
+						+in-c("radio",'Без промокода','promo')
+					+e.panel
+						+e.switch-wrap
+							+in-c("checkbox",'Столовые приборы')(checked)
+						.small.text-secondary Перечень столовых приборов в несколько строк для наглядности
+					//- .row
+					table
+						tr 
+							td.text-secondary
+								small Сумма
+							td
+								small.strong 2 750 ₽ 
+							
+						tr 
+							td.text-secondary
+								small Скидка 10% (PROMOKOD)
+							td
+								small.strong 245 ₽ 
+						tr
+							td.h4.strong Итого 
+							td.h4.strong 2 490 ₽
+
+					button.btn.btn-accent.w-100  Оформить заказ
+	// end sBasket

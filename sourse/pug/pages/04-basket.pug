@@ -1,0 +1,33 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sBasket/_sBasket.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= '03.jpg'
+
+block title
+	- let  title= 'Корзина'
+	title= title
+block pagecontent
+
+	+mob-mnu()
+	+top-nav()
+	.container.section 
+		+b.btnBack(href="#")
+			//- +icon('arrowL')
+			img(src="img/svg/arrowL.svg" alt="Назад")
+	+sContent-inner({
+		title: title
+	})
+		+sBasket
+	+footer()
+
+
+
+

@@ -1,0 +1,161 @@
+// start .sBasket
+.sBasket {
+		// --sPT: ;
+		// --sPB: ;
+		// --sTPB: ;
+		&__row-foot{
+
+			align-items: center;
+			margin-top: auto;
+		}
+		&__row{
+			// flex-wrap: nowrap;
+			.row{
+			}
+		}
+
+		&__item{
+			max-width: 800px;
+			border-radius: 40px;
+			background-color: #fff;
+			margin-bottom: 16px;
+			padding-right: 15px;
+			position: relative;
+			.quantly{
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+		}
+
+		&__close{
+			position: absolute;
+			right: 0;
+			top: 0;
+			background: #FF5274;
+			border-radius: 8px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-image: var(--close);
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+		}
+
+		&__img-wrap{
+			width: 177.78px;
+			min-height: 114.46px;
+			height: auto;
+			margin-right: 15px;
+		}
+		picture{
+			border-radius: 40px 0 0 40px !important;
+		}
+		&__col{
+			padding-top: 14px;
+			// padding-bottom: 14px;
+			display: flex;
+			flex-direction: column;
+
+		}
+		.quantly__btn.minus{
+			&:not(:hover){
+				background: #F3F3F3;
+			}
+		}
+		&__price{
+			letter-spacing: 0.02em;
+			color: #7D7D7D;
+			font-weight: 300;
+			margin-top: auto;
+			strong{
+				font-weight: bold;
+				color: #000;
+				margin-bottom: 0 !important;
+			}
+			span{
+				font-weight: normal;
+			}
+		}
+
+		&__panel{
+			background: #FFFFFF;
+			border-radius: 40px;
+			margin-bottom: 17px;
+			padding: 24px;
+			.small.text-secondary{
+				font-size: 12px;
+			}
+			.btn{
+
+				margin-bottom: 16px;
+			}
+			.sBasket__input{
+				border: 1px solid #C9C9C9; 
+				border-radius: 20px;
+				margin-bottom: 16px;
+			}
+			.custom-input{
+				margin-bottom: 16px;
+			}
+		}
+
+		[type="radio"] {
+			border: none;
+			&:not(:checked){
+				
+				background-image: $form-check-radio-checked-bg-image, linear-gradient(319.57deg, #FDD400 3.27%, #E14E15 78.03%);
+				;
+				// background-size: ;
+			}
+			background-repeat: no-repeat, no-repeat;
+			&:checked{
+				background: url("../img/svg/radio-active.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			width: 24px;
+			height: 24px;
+			margin-right: 17px;
+		}
+		
+		&__switch-wrap{
+			.custom-input{
+				padding-left: 0;
+
+			}
+			input[type=checkbox]{
+				border-radius: 40px;
+				width: 40px;
+				height: 24px;
+				background: none;
+				border: none;
+				background: url(../img/svg/switch.svg);
+				float: right;
+				&:checked{
+					background: url(../img/svg/switch-active.svg);
+
+				}
+				
+			}
+		}
+		table{
+			width: 100%;
+			margin-bottom: 19px;
+			small{
+				font-size: 12px;
+			}
+			td{
+				padding-bottom: 6px;
+				&:nth-child(2){
+					text-align: right;
+				}
+			}
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sBasket
