@@ -37,5 +37,51 @@ mixin modal()
 					a.small(href="#") Отправить код повторно
 				a.small(href="#") Войти под другим номером 
 	// #modal-invaild
-	
+	+b.modal-win--adress(id="add-ardress" class=" " style="display: none" )
+		+form-wrap
+			.h3 Новый адрес
+			.row
+				.col-lg-3
+					+input("Введите", 'text', 'Название адреса')
+				.col-lg-9
+					+input("Начните вводить", 'text', 'Адрес')
+			+e.map-wrap
+				#map.map 
+			.row
+				.col-lg-2
+					+input("Введите", 'text', 'Дом')
+				.col-lg-2
+					+input("Корпус", 'text', 'Дом')
+				.col-lg-2
+					+input("Квартира", 'text', 'Дом')
+				.col-lg-2
+					+input("Подъезд", 'text', 'Дом')
+				.col-lg-2
+					+input("Домофон", 'text', 'Дом')
+				.col-lg-12
+					+input("Например ориентиры, Вход в арку", 'text', 'Комментарий курьеру')
+			.row
+				.col-sm
+					+e.adress г. Ханты-Мансийск, ул. Садовая, д. 14 корп. 52, кв. 12
+					+e.moreinfo 3 подъезд, 7 этаж, 352 домофон
+				.col-sm-auto
+					+e.link(href="#").btn-accent Сохранить адрес
+	// add-ardress
 	// end modals
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
+script.
+	let map;
+
+	function initMap() {
+		map = new google.maps.Map(document.getElementById("map"), {
+			center: new google.maps.LatLng(-33.91722, 151.23064),
+			zoom: 16,
+		});
+		new google.maps.Marker({
+			position: center,
+			map,
+			title: "Hello World!",
+		});
+		window.initMap = initMap;
+	}
+//- script(async defer)

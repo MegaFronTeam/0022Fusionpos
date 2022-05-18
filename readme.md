@@ -5,3 +5,4 @@
 2. <https://megafronteam.github.io/0022Fusionpos/public/04-basket.html>
 2. <https://megafronteam.github.io/0022Fusionpos/public/05-cabinet.html>
 2. <https://megafronteam.github.io/0022Fusionpos/public/06-checkout.html>
+2. <https://megafronteam.github.io/0022Fusionpos/public/00-modal.html>

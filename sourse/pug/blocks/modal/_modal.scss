@@ -26,6 +26,52 @@
 		font-size: 40px;
 		font-weight: 100;
 	}
+	&--adress {
+		max-width: rem(1070);
+		.form-wrap {
+			form {
+				margin-bottom: 0;
+			}
+			&__input-title {
+				margin-bottom: rem(5);
+				display: inline-block;
+			}
+			&__map-wrap {
+				margin-bottom: rem(23);
+				border-radius: 20px;
+				overflow: hidden;
+				@include block(1008, 264);
+				@include media-breakpoint-down(lg) {
+					--ratio: 510/1008;
+				}
+				@include media-breakpoint-down(sm) {
+					--ratio: 840/1008;
+				}
+				.map {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&__adress {
+				letter-spacing: 0.02em;
+				font-size: rem(16);
+				line-height: 1.5em;
+				font-weight: 700;
+			}
+			&__moreinfo {
+				opacity: 0.6;
+				letter-spacing: 0.02em;
+				font-size: rem(14);
+			}
+			&__link {
+				margin-top: rem(10);
+				padding: rem(9) rem(33);
+			}
+		}
+	}
 }
 
 a {

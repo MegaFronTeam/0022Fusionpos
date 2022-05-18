@@ -34,7 +34,7 @@ mixin deliveryAddresses-item(place, adress)
 mixin deliveryAddresses()
 	+b.delivery-addresses
 		+e.title.h4 Адреса доставки
-		+e.link(href="#") 
+		+e.link(href="#add-ardress").link-modal-js
 			span + Добавить новый адрес
 		+e.row.row
 			.col-md-6.col-lg-4

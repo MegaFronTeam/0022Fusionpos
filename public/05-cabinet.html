@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
+<script>
+	let map;
+	
+	function initMap() {
+		map = new google.maps.Map(document.getElementById("map"), {
+			center: new google.maps.LatLng(-33.91722, 151.23064),
+			zoom: 16,
+		});
+		new google.maps.Marker({
+			position: center,
+			map,
+			title: "Hello World!",
+		});
+		window.initMap = initMap;
+	}
+</script><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -114,7 +130,7 @@
 						</div>
 						<div class="delivery-addresses">
 							<div class="delivery-addresses__title h4">Адреса доставки
-							</div><a class="delivery-addresses__link" href="#"> <span>+ Добавить новый адрес</span></a>
+							</div><a class="delivery-addresses__link link-modal-js" href="#add-ardress"><span>+ Добавить новый адрес</span></a>
 							<div class="delivery-addresses__row row">
 								<div class="col-md-6 col-lg-4">
 									<div class="deliveryAddresses-item">
@@ -277,6 +293,87 @@
 			</div>
 		</div>
 		<!-- #modal-invaild-->
+		<div class="modal-win modal-win--adress" id="add-ardress" style="display: none">
+			<div class="form-wrap">
+				<form>
+					<div class="h3">Новый адрес</div>
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Название адреса</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Введите"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-lg-9">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Адрес</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Начните вводить"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+					</div>
+					<div class="form-wrap__map-wrap">
+						<div class="map" id="map"> </div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Введите"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-lg-2">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Корпус"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-lg-2">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Квартира"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-lg-2">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Подъезд"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-lg-2">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Домофон"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-lg-12">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__input-title">Комментарий курьеру</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Например ориентиры, Вход в арку"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm">
+							<div class="form-wrap__adress">г. Ханты-Мансийск, ул. Садовая, д. 14 корп. 52, кв. 12
+							</div>
+							<div class="form-wrap__moreinfo">3 подъезд, 7 этаж, 352 домофон
+							</div>
+						</div>
+						<div class="col-sm-auto"><a class="form-wrap__link btn-accent" href="#">Сохранить адрес</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- add-ardress-->
 		<!-- end modals-->
 		<!-- modal libs-->
 		<script src="libs/jquery/jquery.min.js"></script>

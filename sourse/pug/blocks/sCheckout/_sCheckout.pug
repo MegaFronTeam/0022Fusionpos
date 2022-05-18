@@ -13,7 +13,7 @@ mixin sCheckout(data)
 						+deliveryAddresses-item('Дом', 'г. Ханты-Мансийск,<br>ул. Садовая, д. 14 корп. 52, кв. 12').active
 					.col-md-6
 						+deliveryAddresses-item('Работа', 'г. Ханты-Мансийск,<br>ул. Парковых работников, д. 14 корп. 52, кв. 12')
-				+e.link(href="#") 
+				+e.link(href="#add-ardress").link-modal-js
 					span + Добавить новый адрес
 				+e.checkbox-wrap
 					+in-c('checkbox')
