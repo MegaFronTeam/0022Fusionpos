@@ -1,0 +1,95 @@
+mixin sCheckout(data)
+	// start sCheckout
+	+b.sCheckout.section#sCheckout&attributes(attributes)
+		+e.main-row.row
+			.col-lg-8
+				+personalData('Контакты')
+				+e.delivery
+					+e.title.h4 Доставка 
+					+in-c('radio', 'Самовывоз', 'delivery')
+					+in-c('radio', 'Доставка по адресу', 'delivery')
+				+e.row.row
+					.col-md-6
+						+deliveryAddresses-item('Дом', 'г. Ханты-Мансийск,<br>ул. Садовая, д. 14 корп. 52, кв. 12').active
+					.col-md-6
+						+deliveryAddresses-item('Работа', 'г. Ханты-Мансийск,<br>ул. Парковых работников, д. 14 корп. 52, кв. 12')
+				+e.link(href="#") 
+					span + Добавить новый адрес
+				+e.checkbox-wrap
+					+in-c('checkbox')
+						p Бесконтактная доставка
+						p Действует только при оплате онлайн
+				+e.delivery-time
+					+in-c('radio', 'Ближайшая', 'time-delivery')
+					+in-c('radio', 'Отложенная доставка', 'time-delivery')
+				+e.radio-wrap
+					+in-c('radio', '08:00', 'time')
+					+in-c('radio', '08:30', 'time')
+					+in-c('radio', '09:00', 'time')
+					+in-c('radio', '09:30', 'time')
+					+in-c('radio', '10:00', 'time')
+					+in-c('radio', '11:30', 'time')
+					+in-c('radio', '12:00', 'time')
+					+in-c('radio', '12:30', 'time')
+					+in-c('radio', '13:00', 'time')
+					+in-c('radio', '13:30', 'time')
+					+in-c('radio', '14:00', 'time')(disabled)
+					+in-c('radio', '14:30', 'time')(disabled)
+					+in-c('radio', '15:00', 'time')(disabled)
+					+in-c('radio', '15:30', 'time')
+					+in-c('radio', '16:00', 'time')
+					+in-c('radio', '16:30', 'time')
+					+in-c('radio', '17:00', 'time')
+					+in-c('radio', '17:30', 'time')
+					+in-c('radio', '18:00', 'time')
+					+in-c('radio', '18:30', 'time')
+					+in-c('radio', '19:00', 'time')
+					+in-c('radio', '19:30', 'time')
+					+in-c('radio', '20:00', 'time')
+					+in-c('radio', '20:30', 'time')
+					+in-c('radio', '21:00', 'time')
+					+in-c('radio', '21:30', 'time')(disabled)
+					+in-c('radio', '22:00', 'time')(disabled)
+					+in-c('radio', '22:30', 'time')(disabled)
+					+in-c('radio', '23:00', 'time')(disabled)
+					+in-c('radio', '23:30', 'time')(disabled)
+			+e.col.col-lg-3
+				+e.your-order.sBasket
+					.h4 Ваш заказ
+					+e.order-wrap
+						+e.order-item
+							h6 Длинное название продукции в одну строку или две
+							+e.weight Вес: 485 г.
+							+e.cost 2 490 
+								span ₽
+						+e.order-item
+							h6 Burger мистер Трюфель x 10
+							+e.weight Вес: 485 г.
+							+e.cost 2 490 ₽
+						+e.order-item
+							h6 Burger мистер Трюфель x 10
+							+e.weight Вес: 485 г.
+							+e.cost 2 490 ₽
+						+e.order-item
+							h6 Длинное название продукции в одну строку или две
+							+e.weight Вес: 485 г.
+							+e.cost 2 490 ₽
+					table
+						tbody
+							tr
+								td.text-secondary
+									small Сумма
+								td
+									small.strong 2 750 ₽
+							tr
+								td.text-secondary
+									small Скидка 10% (PROMOKOD)
+								td
+									small.strong 245 ₽ 
+							tr
+								td.h4.strong Итого 
+								td.h4.strong 2 490 ₽
+					button.btn.btn-accent.w-100 Оформить заказ
+
+					
+	// end sCheckout

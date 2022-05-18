@@ -1,0 +1,55 @@
+mixin personalData(title, cabinet)
+	+b.personal-data
+		+e.title.h4!= title
+		if cabinet
+			+b.form-wrap.row
+				.col-md-6.col-lg-4
+					+input('Введите', 'text' ,'Фамилия Имя Отчество')
+				.col-md-6.col-lg-4
+					+input('Введите', 'email' ,'E-mail')
+				.col-md-6.col-lg-4
+					+input('Введите', 'tel' ,'Номер телефона')(disabled value="+7 985 669 88 99")
+				.col-md-6.col-lg-4 
+					+e.btn.BUTTON.btn-accent Сохранить изменения
+		else
+			+b.form-wrap.row
+				.col-md-6.col-lg-4
+					+input('Введите', 'tel' ,'Номер телефона')(disabled value="+7 985 669 88 99")
+				.col-md-6.col-lg-4
+					+input('Введите', 'text' ,'Имя')
+				.col-12
+					+in-c('checkbox', 'Подтвердить заказ по телефону')
+
+mixin deliveryAddresses-item(place, adress)
+	+b.deliveryAddresses-item&attributes(attributes)
+		+e.text Название
+		+e.card-title.h5!= place
+		+e.text Адрес
+		+e.card-title.h5!= adress
+		p 3 подъезд, 7 этаж, 352 домофон
+		+e.delete
+			+e.icon
+			p Удалить адрес
+
+mixin deliveryAddresses()
+	+b.delivery-addresses
+		+e.title.h4 Адреса доставки
+		+e.link(href="#") 
+			span + Добавить новый адрес
+		+e.row.row
+			.col-md-6.col-lg-4
+				+deliveryAddresses-item('Дом', 'г. Ханты-Мансийск,<br>ул. Садовая, д. 14 корп. 52, кв. 12')
+			.col-md-6.col-lg-4
+				+deliveryAddresses-item('Работа', 'г. Ханты-Мансийск,<br>ул. Парковых работников, д. 14 корп. 52, кв. 12')
+			.col-md-6.col-lg-4
+				+deliveryAddresses-item('Любовница', 'г. Москва, ул. Садовая, д. 14<br>корп. 52, кв. 12')
+
+mixin sCabinet(data)
+	// start sCabinet
+	+b.sCabinet.section#sCabinet&attributes(attributes)
+		+e.wrap
+			+e.link.h5(href="#").active Профиль
+			+e.link.h5(href="#") История заказов
+		+personalData('Личные данные', 'true')
+		+deliveryAddresses()
+	// end sCabinet
