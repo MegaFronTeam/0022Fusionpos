@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
+<script>
+	let map;
+	
+	function initMap() {
+		map = new google.maps.Map(document.getElementById("map"), {
+			center: new google.maps.LatLng(-33.91722, 151.23064),
+			zoom: 16,
+		});
+		new google.maps.Marker({
+			position: center,
+			map,
+			title: "Hello World!",
+		});
+		window.initMap = initMap;
+	}
+	
+</script><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -361,37 +378,37 @@
 						<div class="map" id="map"> </div>
 					</div>
 					<div class="row">
-						<div class="col-lg-2">
+						<div class="col-lg">
 							<div class="form-wrap__input-wrap form-group">
 								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Введите"/>
 								</label>
 							</div>
 							<!-- +e.input-wrap-->
 						</div>
-						<div class="col-lg-2">
+						<div class="col-lg">
 							<div class="form-wrap__input-wrap form-group">
-								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Корпус"/>
+								<label><span class="form-wrap__input-title">Корпус</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Введите"/>
 								</label>
 							</div>
 							<!-- +e.input-wrap-->
 						</div>
-						<div class="col-lg-2">
+						<div class="col-lg">
 							<div class="form-wrap__input-wrap form-group">
-								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Квартира"/>
+								<label><span class="form-wrap__input-title">Квартира</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Введите"/>
 								</label>
 							</div>
 							<!-- +e.input-wrap-->
 						</div>
-						<div class="col-lg-2">
+						<div class="col-lg">
 							<div class="form-wrap__input-wrap form-group">
-								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Подъезд"/>
+								<label><span class="form-wrap__input-title">Подъезд</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Введите"/>
 								</label>
 							</div>
 							<!-- +e.input-wrap-->
 						</div>
-						<div class="col-lg-2">
+						<div class="col-lg">
 							<div class="form-wrap__input-wrap form-group">
-								<label><span class="form-wrap__input-title">Дом</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Домофон"/>
+								<label><span class="form-wrap__input-title">Домофон</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="Введите"/>
 								</label>
 							</div>
 							<!-- +e.input-wrap-->
@@ -415,26 +432,7 @@
 						</div>
 					</div>
 				</form>
-			</div><script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
-			<script>
-				let map;
-				
-				if(map) {
-					function initMap() {
-						map = new google.maps.Map(document.getElementById("map"), {
-							center: new google.maps.LatLng(-33.91722, 151.23064),
-							zoom: 16,
-						});
-						new google.maps.Marker({
-							position: center,
-							map,
-							title: "Hello World!",
-						});
-						window.initMap = initMap;
-					}
-				
-				}
-			</script>
+			</div>
 		</div>
 		<!-- modal libs-->
 		<script src="libs/jquery/jquery.min.js"></script>

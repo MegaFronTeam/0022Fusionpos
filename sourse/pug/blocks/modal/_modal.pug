@@ -48,16 +48,16 @@ mixin modal()
 			+e.map-wrap
 				#map.map 
 			.row
-				.col-lg-2
+				.col-lg
 					+input("Введите", 'text', 'Дом')
-				.col-lg-2
-					+input("Корпус", 'text', 'Дом')
-				.col-lg-2
-					+input("Квартира", 'text', 'Дом')
-				.col-lg-2
-					+input("Подъезд", 'text', 'Дом')
-				.col-lg-2
-					+input("Домофон", 'text', 'Дом')
+				.col-lg
+					+input("Введите", 'text', 'Корпус')
+				.col-lg
+					+input("Введите", 'text', 'Квартира')
+				.col-lg
+					+input("Введите", 'text', 'Подъезд')
+				.col-lg
+					+input("Введите", 'text', 'Домофон')
 				.col-lg-12
 					+input("Например ориентиры, Вход в арку", 'text', 'Комментарий курьеру')
 			.row
@@ -66,23 +66,21 @@ mixin modal()
 					+e.moreinfo 3 подъезд, 7 этаж, 352 домофон
 				.col-sm-auto
 					+e.link(href="#").btn-accent Сохранить адрес
-		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
-		script.
-			let map;
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
+script.
+	let map;
 
-			if(map) {
-				function initMap() {
-					map = new google.maps.Map(document.getElementById("map"), {
-						center: new google.maps.LatLng(-33.91722, 151.23064),
-						zoom: 16,
-					});
-					new google.maps.Marker({
-						position: center,
-						map,
-						title: "Hello World!",
-					});
-					window.initMap = initMap;
-				}
+	function initMap() {
+		map = new google.maps.Map(document.getElementById("map"), {
+			center: new google.maps.LatLng(-33.91722, 151.23064),
+			zoom: 16,
+		});
+		new google.maps.Marker({
+			position: center,
+			map,
+			title: "Hello World!",
+		});
+		window.initMap = initMap;
+	}
 
-			}
 //- script(async defer)
