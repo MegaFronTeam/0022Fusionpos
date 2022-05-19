@@ -66,21 +66,5 @@ mixin modal()
 					+e.moreinfo 3 подъезд, 7 этаж, 352 домофон
 				.col-sm-auto
 					+e.link(href="#").btn-accent Сохранить адрес
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
-script.
-	let map;
-
-	function initMap() {
-		map = new google.maps.Map(document.getElementById("map"), {
-			center: new google.maps.LatLng(-33.91722, 151.23064),
-			zoom: 16,
-		});
-		new google.maps.Marker({
-			position: center,
-			map,
-			title: "Hello World!",
-		});
-		window.initMap = initMap;
-	}
 
 //- script(async defer)

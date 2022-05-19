@@ -1,21 +1,4 @@
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
-<script>
-	let map;
-	
-	function initMap() {
-		map = new google.maps.Map(document.getElementById("map"), {
-			center: new google.maps.LatLng(-33.91722, 151.23064),
-			zoom: 16,
-		});
-		new google.maps.Marker({
-			position: center,
-			map,
-			title: "Hello World!",
-		});
-		window.initMap = initMap;
-	}
-	
-</script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -488,9 +471,28 @@
 		<!-- modal libs-->
 		<!-- slider libs-->
 		<script src="libs/swiper/swiper-bundle.min.js"> </script>
-		<!-- /slider libs-->
+		<!-- /slider libs--><script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=6331e0a6-b922-4b24-a8f0-88e62d68142f"></script>
 		<script src="libs/inputmask/inputmask.min.js"></script>
 		<script src="js/libs.js"></script>
 		<script src="js/common.js"></script>
 	</body>
+	<script>
+		let map;
+		
+		var myMap;
+		
+		ymaps.ready(init);
+		function init () {
+			myMap = new ymaps.Map('#map', {
+					center:[55.76, 37.64],
+					zoom:10
+			});
+			myPlacemark2 = new ymaps.Placemark([55.76, 37.56], {
+					}, {
+						iconImageHref: 'img/@2x/google-marker.png',
+						iconImageSize: [30, 42],
+						iconImageOffset: [-3, -42]
+					});
+		}
+	</script>
 </html>
