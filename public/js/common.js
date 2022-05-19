@@ -348,7 +348,8 @@ function eventHandler() {
 
 	if ('.stickyItem--js') {
 		$('.stickyItem--js').hcSticky({
-			stickTo: '.stickyContainer--js'
+			stickTo: '.stickyContainer--js',
+			top: 20
 		});
 	}
 }

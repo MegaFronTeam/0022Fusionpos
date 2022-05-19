@@ -1,7 +1,7 @@
 mixin sCheckout(data)
 	// start sCheckout
 	+b.sCheckout.section#sCheckout&attributes(attributes)
-		+e.main-row.row
+		+e.main-row.row.stickyContainer--js
 			.col-lg-8
 				+personalData('Контакты')
 				+e.delivery
@@ -54,7 +54,7 @@ mixin sCheckout(data)
 					+in-c('radio', '23:00', 'time')(disabled)
 					+in-c('radio', '23:30', 'time')(disabled)
 			+e.col.col-lg-3
-				+e.your-order.sBasket
+				+e.your-order.sBasket.stickyItem--js
 					.h4 Ваш заказ
 					+e.order-wrap
 						+e.order-item

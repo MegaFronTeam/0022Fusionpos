@@ -1,20 +1,4 @@
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
-<script>
-	let map;
-	
-	function initMap() {
-		map = new google.maps.Map(document.getElementById("map"), {
-			center: new google.maps.LatLng(-33.91722, 151.23064),
-			zoom: 16,
-		});
-		new google.maps.Marker({
-			position: center,
-			map,
-			title: "Hello World!",
-		});
-		window.initMap = initMap;
-	}
-</script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -95,7 +79,7 @@
 					<h1>Оформление заказа</h1>
 					<!-- start sCheckout-->
 					<div class="sCheckout section" id="sCheckout">
-						<div class="sCheckout__main-row row">
+						<div class="sCheckout__main-row row stickyContainer stickyContainer--js">
 							<div class="col-lg-8">
 								<div class="personal-data">
 									<div class="personal-data__title h4">Контакты
@@ -243,7 +227,7 @@
 								</div>
 							</div>
 							<div class="sCheckout__col col-lg-3">
-								<div class="sCheckout__your-order sBasket">
+								<div class="sCheckout__your-order sBasket stickyItem stickyItem--js">
 									<div class="h4">Ваш заказ</div>
 									<div class="sCheckout__order-wrap">
 										<div class="sCheckout__order-item">
@@ -478,10 +462,27 @@
 						</div>
 					</div>
 				</form>
-			</div>
+			</div><script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcIQI6ds1aBAYElrXhpAsu8apLm9VqSNE&callback=initMap&v=weekly"></script>
+			<script>
+				let map;
+				
+				if(map) {
+					function initMap() {
+						map = new google.maps.Map(document.getElementById("map"), {
+							center: new google.maps.LatLng(-33.91722, 151.23064),
+							zoom: 16,
+						});
+						new google.maps.Marker({
+							position: center,
+							map,
+							title: "Hello World!",
+						});
+						window.initMap = initMap;
+					}
+				
+				}
+			</script>
 		</div>
-		<!-- add-ardress-->
-		<!-- end modals-->
 		<!-- modal libs-->
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
