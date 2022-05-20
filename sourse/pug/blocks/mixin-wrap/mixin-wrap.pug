@@ -33,3 +33,34 @@ mixin ie11()
 	//- modernizer and for ie11
 
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+
+mixin mapBlock()
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=6331e0a6-b922-4b24-a8f0-88e62d68142f"></script>
+	script.
+		var myMap;
+
+		ymaps.ready(init);
+		function init () {
+		var myMap = new ymaps.Map("map", {
+						center: [55.76, 37.64],
+						zoom: 10
+				}),
+
+				myPlacemark2 = new ymaps.Placemark([55.76, 37.56], {
+						// Свойства.
+						hintContent: 'Собственный значок метки'
+				}, {
+						// Опции.
+						// Своё изображение иконки метки.
+						iconImageHref: 'img/svg/google-marker.png',
+						// Размеры метки.
+						iconImageSize: [30, 42],
+						// Смещение левого верхнего угла иконки относительно
+						// её "ножки" (точки привязки).
+						iconImageOffset: [-3, -42]
+				});
+
+				// Добавляем все метки на карту.
+				myMap.geoObjects
+					.add(myPlacemark2)
+		}
